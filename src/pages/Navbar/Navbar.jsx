@@ -9,7 +9,6 @@ export default function Navbar() {
             </a>
             <ul>
                 <CustomLink href="/home">Home</CustomLink>
-                <CustomLink href="/Service">Service Completion</CustomLink>
                 <CustomLink href="/appointments">Appointments</CustomLink>
                 <CustomLink href="/profile">Profile</CustomLink>
             </ul>

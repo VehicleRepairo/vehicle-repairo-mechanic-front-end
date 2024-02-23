@@ -3,7 +3,6 @@ import { Login } from "./pages/login/Login.jsx";
 import { Signup } from "./pages/signup/Signup.jsx";
 import HomePage from "./pages/home/home.jsx"; 
 import Navbar from "./pages/Navbar/Navbar.jsx";
-import ServiceCompletion from "./pages/servicecompletion/Service.jsx";
 import Appointments from "./pages/appointments/appointments.jsx";
 import Profile from "./pages/profile/profile.jsx";
 import "./App.css";

@@ -1,3 +1,81 @@
-export default function appointments () {
-    return <h1>Appointments</h1>
+import React, { useState, useEffect } from 'react';
+import './appointments.css';
+
+const FETCH_INTERVAL = 5000; // Fetch appointments every 5 seconds
+
+export default function Appointments() {
+  const [appointments, setAppointments] = useState([]);
+  const [selectedAppointment, setSelectedAppointment] = useState(null);
+
+  useEffect(() => {
+    const fetchAppointments = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/appointment');
+        if (!response.ok) {
+          throw new Error('Failed to fetch appointments');
+        }
+        const data = await response.json();
+        setAppointments(data);
+      } catch (error) {
+        console.error('Error fetching appointments:', error);
+      }
+    };
+
+    fetchAppointments();
+
+    const interval = setInterval(fetchAppointments, FETCH_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleReject = async (appointmentId) => {
+    try {
+      const response = await fetch(`http://localhost:5000/appointment/${appointmentId}`, {
+        method: 'DELETE'
+      });
+      if (!response.ok) {
+        throw new Error('Failed to reject appointment');
+      }
+      setAppointments(prevAppointments => prevAppointments.filter(appointment => appointment._id !== appointmentId));
+    } catch (error) {
+      console.error('Error rejecting appointment:', error);
+    }
+  };
+
+  const handleRowClick = (appointmentId) => {
+    setSelectedAppointment(appointmentId);
+  };
+
+  return (
+    <div className="appointments-container">
+      <h2>Appointments</h2>
+      {appointments.length > 0 ? (
+        <table className="appointments-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Problem</th>
+            </tr>
+          </thead>
+          <tbody>
+            {appointments.map(appointment => (
+              <tr key={appointment._id} onClick={() => handleRowClick(appointment._id)} className={selectedAppointment === appointment._id ? 'selected' : ''}>
+                <td>{appointment.name}</td>
+                <td>{appointment.date}</td>
+                <td>{appointment.time}</td>
+                <td>{appointment.problem}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="no-appointments">
+          <p>No appointments</p>
+          <img src="no_appointments.png" alt="No appointments" style={{ width: "150px", height: "150px" }} />
+        </div>
+      )}
+    </div>
+  );
 }
