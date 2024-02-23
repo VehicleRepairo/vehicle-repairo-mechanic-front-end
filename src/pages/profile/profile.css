@@ -1,4 +1,4 @@
-/*.profile-info {
+.profile-info {
     border: 1px solid #ffffff;
     padding: 20px;
     margin-bottom: 20px;
@@ -45,4 +45,4 @@
 
 .profile-field img:hover {
     opacity: 0.8;
-}*/
+}
