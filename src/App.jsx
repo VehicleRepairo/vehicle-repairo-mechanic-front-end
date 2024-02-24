@@ -2,7 +2,8 @@ import { Navigate, Route, Routes, BrowserRouter as Router } from "react-router-d
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase/firebase";
 import HomePage from "./pages/home/home.jsx"; 
-import Profile from "./pages/profile/profile.jsx";
+import Navbar from "./pages/Navbar/Navbar.jsx";
+import ServiceCompletion from "./pages/servicecompletion/Service.jsx";
 import Appointments from "./pages/appointments/appointments.jsx";
 import PageLayout from "./PageLayout/PageLayout";
 import Auth from "./pages/Auth/Auth.jsx";

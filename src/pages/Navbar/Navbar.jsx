@@ -5,40 +5,17 @@ import { Link ,Button,Avatar,Flex} from "@chakra-ui/react";
 import useLogout from "../../hooks/useLogout";
 
 export default function Navbar() {
-const { handleLogout, isLoggingOut } = useLogout();
-  return (
-    <nav className="nav">
-      <a href="/">
-        <img
-          src="/Mech_Logo.jpg"
-          alt="Logo"
-          style={{ width: "120px", height: "100px" }}
-        />
-      </a>
-      <ul>
-        <Link to={"/"} as={RouterLink} _hover={{ textDecoration: "underline", color: "#002699" }}    fontWeight="500">
-          Home
-        </Link>
-        <Link to={"/appointments"} as={RouterLink}  _hover={{ textDecoration: "underline", color: "#002699" }} fontWeight="500">
-          Appointments
-        </Link>
-        <Link to={"/profile"} as={RouterLink}  _hover={{ textDecoration: "underline", color: "#002699" }} fontWeight="500">
-          Profile
-        </Link>
-        <Button
-          display={{ base: "none", md: "block" }}
-          variant={"solid"}
-          _hover={{ bg: "#990000", color: "white" }}
-          transition="background-color 0.3s ease-out, color 0.3s ease-out"
-          isLoading={isLoggingOut}
-          onClick={handleLogout}
-        >
-          Logout
-        </Button>
-
-      </ul>
-      
-    
-    </nav>
-  );
+    return (
+        <nav className="nav">
+            <a href="/">
+            <img src="/Mech_Logo.jpg" alt="Logo" style={{ width: '120px', height: '100px' }} />
+            </a>
+            <ul>
+                <CustomLink href="/home">Home</CustomLink>
+                <CustomLink href="/Service">Service Completion</CustomLink>
+                <CustomLink href="/appointments">Appointments</CustomLink>
+                <CustomLink href="/profile">Profile</CustomLink>
+            </ul>
+        </nav>
+    );
 }
