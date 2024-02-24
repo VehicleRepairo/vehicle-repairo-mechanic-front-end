@@ -1,42 +1,42 @@
 .home-container {
-    position: relative;
-    background-position: right center;
-    background-repeat: no-repeat; 
-    background-size: 1000px 700px; 
-    display: flex;
-    align-items: flex-start; 
-    justify-content: flex-start;
-    color: white; 
-    height: 100vh; 
-  }
-  
-  .image-container {
-    position: absolute;
-    margin-left:600px;
-    margin-top: 100px;
-  }
-  
-  .content-container {
-    color: rgb(0, 0, 0); 
-    text-align: left; 
-    margin-left: 250px; 
-    margin-top: 10px;
-  }
-  
-  .content-container p {
-    font-family: 'Calibri', sans-serif;
-  }
-  
-  .content-container p:first-child {
-    font-size: 40px; 
-    color: #282C80;
-  }
-  
-  .content-container p:nth-child(2) {
-    font-size: 18px; 
-  }
-  
-  .content-container p:nth-child(3) {
-    font-size: 50px; 
-    color: #282C80;
-  }
+  position: relative;
+  background-position: right center;
+  background-repeat: no-repeat; 
+  background-size: 1000px 700px; 
+  display: flex;
+  align-items: flex-start; 
+  justify-content: flex-start;
+  color: white; 
+  height: 100vh; 
+}
+
+.image-container {
+  position: absolute;
+  margin-left:600px;
+  margin-top: 100px;
+}
+
+.content-container {
+  color: rgb(0, 0, 0); 
+  text-align: left; 
+  margin-left: 250px; 
+  margin-top: 10px;
+}
+
+.content-container p {
+  font-family: 'Calibri', sans-serif;
+}
+
+.content-container p:first-child {
+  font-size: 40px; 
+  color: #282C80;
+}
+
+.content-container p:nth-child(2) {
+  font-size: 18px; 
+}
+
+.content-container p:nth-child(3) {
+  font-size: 50px; 
+  color: #282C80;
+}
