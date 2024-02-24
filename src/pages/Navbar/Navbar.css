@@ -3,12 +3,13 @@
 }
 
 body {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 18px;
+ 
 }
 
 .nav {
-    background-color: #ffffff;
+    background-color:white;
     color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
@@ -43,6 +44,7 @@ body {
 .nav li:hover{
   color: blue;
 }
+
 
   .nav ul li a {
     color: #000000;
