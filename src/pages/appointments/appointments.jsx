@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './appointments.css';
 
-const FETCH_INTERVAL = 5000; // Fetch appointments every 5 seconds
+const FETCH_INTERVAL = 36000000;
 
 export default function Appointments() {
   const [appointments, setAppointments] = useState([]);
@@ -11,6 +11,7 @@ export default function Appointments() {
     const fetchAppointments = async () => {
       try {
         const response = await fetch('http://localhost:5000/appointment');
+        console.log(response)
         if (!response.ok) {
           throw new Error('Failed to fetch appointments');
         }
@@ -56,16 +57,18 @@ export default function Appointments() {
               <th>Name</th>
               <th>Date</th>
               <th>Time</th>
+              <th>Vehicle</th>
               <th>Problem</th>
             </tr>
           </thead>
           <tbody>
             {appointments.map(appointment => (
               <tr key={appointment._id} onClick={() => handleRowClick(appointment._id)} className={selectedAppointment === appointment._id ? 'selected' : ''}>
-                <td>{appointment.name}</td>
-                <td>{appointment.date}</td>
-                <td>{appointment.time}</td>
-                <td>{appointment.problem}</td>
+                <td>{appointment.user}</td>
+                <td>{appointment.Date_of_appointment}</td>
+                <td>{appointment.Appointment_time}</td>
+                <td>{appointment.vehicle} - {appointment.vehicle_brand}</td>
+                <td>{appointment.Service_Required}</td>
               </tr>
             ))}
           </tbody>
