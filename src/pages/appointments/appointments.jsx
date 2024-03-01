@@ -38,6 +38,7 @@ export default function Appointments() {
         throw new Error('Failed to reject appointment');
       }
       setAppointments(prevAppointments => prevAppointments.filter(appointment => appointment._id !== appointmentId));
+      setSelectedAppointment(null); // Reset selected appointment after rejection
     } catch (error) {
       console.error('Error rejecting appointment:', error);
     }
@@ -76,6 +77,14 @@ export default function Appointments() {
         <div className="no-appointments">
           <p>No appointments</p>
           <img src="no_appointments.png" alt="No appointments" style={{ width: "150px", height: "150px" }} />
+        </div>
+      )}
+
+      {/* Conditionally render buttons */}
+      {selectedAppointment && (
+        <div className="button-container">
+          <button onClick={() => handleAccept(selectedAppointment)}>Accept</button>
+          <button onClick={() => handleReject(selectedAppointment)}>Reject</button>
         </div>
       )}
     </div>
