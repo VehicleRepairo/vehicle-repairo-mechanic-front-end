@@ -49,7 +49,6 @@ export default function Appointments() {
 
   return (
     <div className="appointments-container">
-      <h2>Appointments</h2>
       {appointments.length > 0 ? (
         <table className="appointments-table">
           <thead>
