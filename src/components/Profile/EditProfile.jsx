@@ -30,20 +30,38 @@ const EditProfile = ({ isOpen, onClose }) => {
     const [inputs, setInputs] = useState({
         fullName: authUser.fullName || "",
         contact: authUser.contact || "",
-        type: authUser.catergory || "",
+        catergory: authUser.catergory || "",
+		location: "",
+		address:""
 	});
 
 	const handleEditProfile = async () => {
 		try {
+			console.log(authUser.uid)
             console.log(inputs)
             console.log(selectedFile)
 			await editProfile(inputs, selectedFile);
+			await fetch("http://localhost:8000/profile", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+					
+                    firebase_uid: authUser.uid,
+                    address: inputs.location,
+					location:inputs.address
+					
+                })
+            });
 			setSelectedFile(null);
 			onClose();
 		} catch (error) {
 			showToast("Error", error.message, "error");
 		}
 	};
+
+	
 
 	return (
 		<>
@@ -105,8 +123,30 @@ const EditProfile = ({ isOpen, onClose }) => {
 										placeholder={"Type"}
 										size={"sm"}
 										type={"text"}
-										value={inputs.type || authUser.catergory}
-										onChange={(e) => setInputs({ ...inputs, type: e.target.value })}
+										value={inputs.catergory || authUser.catergory}
+										onChange={(e) => setInputs({ ...inputs, catergory: e.target.value })}
+									/>
+								</FormControl>
+
+								<FormControl>
+									<FormLabel fontSize={"sm"}>City</FormLabel>
+									<Input
+										placeholder={"Enter your location"}
+										size={"sm"}
+										type={"text"}
+										value={inputs.location}
+										onChange={(e) => setInputs({ ...inputs, location: e.target.value })}
+									/>
+								</FormControl>
+								
+								<FormControl>
+									<FormLabel fontSize={"sm"}>Address</FormLabel>
+									<Input
+										placeholder={"Address"}
+										size={"sm"}
+										type={"text"}
+										value={inputs.address}
+										onChange={(e) => setInputs({ ...inputs, address: e.target.value })}
 									/>
 								</FormControl>
 

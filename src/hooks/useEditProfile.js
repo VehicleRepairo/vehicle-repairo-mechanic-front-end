@@ -33,7 +33,7 @@ const useEditProfile = () => {
 				...authUser, //to prevent overwriting
 				fullName: inputs.fullName || authUser.fullName,
 				contact: inputs.contact || authUser.contact,
-				type: inputs.type || authUser.type,
+				catergory: inputs.catergory || authUser.catergory,
 				profilePicURL: URL || authUser.profilePicURL,
 			};
 
