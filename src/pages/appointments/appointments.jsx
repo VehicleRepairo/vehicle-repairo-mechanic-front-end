@@ -78,13 +78,18 @@ export default function Appointments() {
           <p>No appointments</p>
           <img src="no_appointments.png" alt="No appointments" style={{ width: "150px", height: "150px" }} />
         </div>
-      )}
+      )}<br></br>
 
       {/* Conditionally render buttons */}
       {selectedAppointment && (
         <div className="button-container">
-          <button onClick={() => handleAccept(selectedAppointment)}>Accept</button>
+          <div className="Done-container">
+          <button onClick={() => handleAccept(selectedAppointment)}>Done</button>
+          </div><br></br><br></br>
+          <div className="Reject-container">
           <button onClick={() => handleReject(selectedAppointment)}>Reject</button>
+          <br></br>
+          </div>
         </div>
       )}
     </div>
