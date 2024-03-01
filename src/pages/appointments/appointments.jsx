@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './appointments.css';
 
-const FETCH_INTERVAL = 36000000;
+const FETCH_INTERVAL = 36000000; // Fetch appointments every 5 seconds
 
 export default function Appointments() {
   const [appointments, setAppointments] = useState([]);
