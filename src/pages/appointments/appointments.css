@@ -6,14 +6,14 @@
 
 .appointments-table th,
 .appointments-table th {
-  background-color: #f2f2f2; /* Background color */
-  color: #5a5a5a; /* Text color */
+  background-color: #f2f2f2; 
+  color: #5a5a5a; 
 }
 .appointments-table td {
-  padding: 25px 26px; /* Increased padding */
-  border-top: 1px solid #ccc; /* Keep only the top border */
-  border-left: none; /* Remove left border */
-  border-right: none; /* Remove right border */
+  padding: 25px 26px; 
+  border-top: 1px solid #ccc; 
+  border-left: none; 
+  border-right: none; 
 }
 
 .appointments-table th {
@@ -30,36 +30,41 @@
 }
 
 .Done-container button {
-  background-color: #1D2B78; /* Green */
+  background-color: #1D2B78;
   color: white;
   border: none;
-  padding: 10px 30px; /* Increased padding for larger size */
+  padding: 10px 30px; 
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px; /* Increased font size */
+  font-size: 15px; 
   cursor: pointer;
   border-radius: 5px;
 }
 
 .Done-container button:hover {
-  background-color: #263aa8; /* Darker green */
+  background-color: #263aa8; 
 }
 
-/* Style for the Reject button */
+
 .Reject-container button {
-  background-color: #1D2B78; /* Red */
+  background-color: #1D2B78;
   color: white;
   border: none;
-  padding: 10px 30px; /* Increased padding for larger size */
+  padding: 10px 30px; 
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px; /* Increased font size */
+  font-size: 15px; 
   cursor: pointer;
   border-radius: 5px;
 }
 
 .Reject-container button:hover {
-  background-color: #263aa8; /* Darker red */
+  background-color: #263aa8; 
+}
+
+.Done-container button.clicked,
+.Reject-container button.clicked {
+  background-color: #020d4a;
 }

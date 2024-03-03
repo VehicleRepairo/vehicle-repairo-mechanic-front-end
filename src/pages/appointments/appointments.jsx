@@ -6,6 +6,7 @@ const FETCH_INTERVAL = 36000000; // Fetch appointments every 5 seconds
 export default function Appointments() {
   const [appointments, setAppointments] = useState([]);
   const [selectedAppointment, setSelectedAppointment] = useState(null);
+  const [buttonClicked, setButtonClicked] = useState(null);
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -46,6 +47,12 @@ export default function Appointments() {
 
   const handleRowClick = (appointmentId) => {
     setSelectedAppointment(appointmentId);
+    setButtonClicked(null); // Reset button clicked state when row is clicked
+  };
+
+  const handleAccept = async (appointmentId) => {
+    setButtonClicked(appointmentId);
+    // Implement accept logic here
   };
 
   return (
@@ -64,7 +71,7 @@ export default function Appointments() {
           <tbody>
             {appointments.map(appointment => (
               <tr key={appointment._id} onClick={() => handleRowClick(appointment._id)} className={selectedAppointment === appointment._id ? 'selected' : ''}>
-                <td>{appointment.user}</td>
+                <td>{appointment.user_uid}</td>
                 <td>{appointment.Date_of_appointment}</td>
                 <td>{appointment.Appointment_time}</td>
                 <td>{appointment.vehicle} - {appointment.vehicle_brand}</td>
@@ -78,17 +85,15 @@ export default function Appointments() {
           <p>No appointments</p>
           <img src="no_appointments.png" alt="No appointments" style={{ width: "150px", height: "150px" }} />
         </div>
-      )}<br></br>
+      )}
 
-      {/* Conditionally render buttons */}
       {selectedAppointment && (
         <div className="button-container">
           <div className="Done-container">
-          <button onClick={() => handleAccept(selectedAppointment)}>Done</button>
-          </div><br></br><br></br>
+            <button onClick={() => handleAccept(selectedAppointment)} className={buttonClicked === selectedAppointment ? 'clicked' : ''}>Done</button>
+          </div><br />
           <div className="Reject-container">
-          <button onClick={() => handleReject(selectedAppointment)}>Reject</button>
-          <br></br>
+            <button onClick={() => handleReject(selectedAppointment)} className={buttonClicked === selectedAppointment ? 'clicked' : ''}>Reject</button>
           </div>
         </div>
       )}
