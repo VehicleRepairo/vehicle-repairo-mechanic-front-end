@@ -1,29 +1,23 @@
-.appointments-container {
-  text-align: center;
-}
-
-.appointments-container h2 {
-  text-align: left;
-  margin-left: 300px;
-}
-
-.no-appointments {
-  margin-top: 150px; 
-}
-
 .appointments-table {
   margin: 0 auto;
   border-collapse: collapse;
+  margin-top: 50px;
 }
 
 .appointments-table th,
+.appointments-table th {
+  background-color: #f2f2f2; /* Background color */
+  color: #5a5a5a; /* Text color */
+}
 .appointments-table td {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
+  padding: 25px 26px; /* Increased padding */
+  border-top: 1px solid #ccc; /* Keep only the top border */
+  border-left: none; /* Remove left border */
+  border-right: none; /* Remove right border */
 }
 
 .appointments-table th {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 }
 
 .appointments-table tbody tr:hover {
@@ -35,29 +29,47 @@
   background-color: #e1f5fe;
 }
 
-.button-container {
-  margin-top: 20px;
-}
-
-.reject-button,
-.done-button {
-  background-color: #2196F3;
-  color: #fff;
+.Done-container button {
+  background-color: #1D2B78; /* Green */
+  color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px 30px; /* Increased padding for larger size */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px; /* Increased font size */
   cursor: pointer;
-  margin-right: 10px;
+  border-radius: 5px;
+ 
 }
 
-.reject-button:hover,
-.done-button:hover {
-  background-color: #0b7dda;
+.Done-container button:hover {
+  background-color: rgb(20, 73, 20); /* Darker green */
 }
-h2{
-  margin-left: 650px;
-}
-.appointmentsimg{
+
+/* Style for the Reject button */
+.Reject-container button {
+  background-color: #1D2B78; /* Red */
+  color: white;
+  border: none;
+  padding: 10px 30px; /* Increased padding for larger size */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px; /* Increased font size */
+  cursor: pointer;
+  border-radius: 5px;
   
+}
+
+.Reject-container button:hover {
+  background-color: rgb(80, 18, 18); /* Darker red */
+}
+.appointment_img{
   margin-left: 600px;
+  margin-top: 150px;
+}
+
+.no-appointments {
+  font-size: 15p;
 }

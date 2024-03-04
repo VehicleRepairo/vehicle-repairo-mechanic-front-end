@@ -17,7 +17,7 @@ function App() {
 					<Route path='/' element={authUser ? <HomePage/> : <Navigate to='/auth' />} />
 					<Route path='/auth' element={!authUser ? <Auth /> : <Navigate to='/' />} />
 					<Route path='/profile' element={<Profile />} />
-					<Route path='/appointments' element={<Appointments/>}/>
+					<Route path='/appointments/' element={<Appointments />} />
 				</Routes>
 			</PageLayout>
 		</Router>

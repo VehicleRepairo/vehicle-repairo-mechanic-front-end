@@ -39,6 +39,7 @@ const Profile = () => {
                 }
 
                 const data = await response.json();
+                print (data);
                 setLocation(data);
             } catch (error) {
                 console.error('Error fetching location:', error);
@@ -57,7 +58,7 @@ const Profile = () => {
                             borderRadius="full"
                             boxSize="150px"
                             src={authUser.profilePicURL}
-                            alt="User Profile"
+                            alt=""
                             objectFit='cover'
                         />
                         <Button onClick={onOpen}>Edit Profile</Button>
