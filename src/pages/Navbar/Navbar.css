@@ -96,5 +96,24 @@ color: blue;
   margin-right: 20px;
 }
 
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide the list of links by default */
+  }
 
+  .nav-toggle {
+    display: block; /* Display the hamburger icon */
+  }
+
+  .nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .nav.active .nav-links {
+    display: flex; /* Display the list of links when the hamburger icon is clicked */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+}
 
