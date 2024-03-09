@@ -1,10 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import './appointments.css';
 import useAuthStore from "../../store/authStore";
-import {Flex} from "@chakra-ui/react"
-//import firebase from 'firebase/app'; // Import firebase from the Firebase SDK
-
+import { Flex } from "@chakra-ui/react";
 
 const FETCH_INTERVAL = 36000000; // Fetch appointments every 5 seconds
 
@@ -12,13 +9,11 @@ export default function Appointments() {
   const [appointments, setAppointments] = useState([]);
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const authUser = useAuthStore((state) => state.user);
-  const [buttonClicked,setButtonClicked] = useState(null);
 
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
         const response = await fetch(`http://localhost:8000/appointments/${authUser.uid}`);
-        console.log(response)
         if (!response.ok) {
           throw new Error('Failed to fetch appointments');
         }
@@ -40,6 +35,24 @@ export default function Appointments() {
     setSelectedAppointment(id);
   };
 
+  const handleAccept = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8000/done/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error('Failed to delete appointment');
+      }
+      // Remove the deleted appointment from the local state
+      setAppointments(appointments.filter(appointment => appointment._id !== id));
+      setSelectedAppointment(null); // Deselect the appointment
+      // Display message to the user
+      alert("Appointment deleted");
+    } catch (error) {
+      console.error('Error deleting appointment:', error);
+    }
+  };
+
   const handleReject = async (id) => {
     try {
       const response = await fetch(`http://localhost:8000/appointments/${id}`, {
@@ -51,6 +64,8 @@ export default function Appointments() {
       // Remove the deleted appointment from the local state
       setAppointments(appointments.filter(appointment => appointment._id !== id));
       setSelectedAppointment(null); // Deselect the appointment
+      // Display message to the user
+      alert("Appointment deleted");
     } catch (error) {
       console.error('Error deleting appointment:', error);
     }
@@ -85,26 +100,23 @@ export default function Appointments() {
         </table>
       ) : (
         <div className="no-appointments">
-          <p>No appointments</p> 
           <img className="appointment_img" src="no_appointments.png" alt="No appointments" style={{ width: "150px", height: "150px" }} />
         </div>
-      )}<br></br>
+      )}
 
       {/* Conditionally render buttons */}
       {selectedAppointment && (
         <div className="button-container">
-          <Flex  alignItems={"center"} justifyContent={"center"} gap={5} margin={5} >
-          <div className="Done-container">
-          <button onClick={() => handleAccept(selectedAppointment)}>Done</button>
-          </div><br></br><br></br>
-          <div className="Reject-container">
-          <button onClick={() => handleReject(selectedAppointment)}>Reject</button>
-          <br></br>
-          </div>
+          <Flex alignItems={"center"} justifyContent={"center"} gap={5} margin={5}>
+            <div className="Done-container">
+              <button onClick={() => handleAccept(selectedAppointment)}>Done</button>
+            </div>
+            <div className="Reject-container">
+              <button onClick={() => handleReject(selectedAppointment)}>Reject</button>
+            </div>
           </Flex>
-          
         </div>
       )}
-    </div>
-  );
+    </div>
+  );
 }

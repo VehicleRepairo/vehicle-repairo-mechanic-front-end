@@ -3,7 +3,7 @@
 }
 
 body {
-<<<<<<< HEAD
+
     margin-top: 10px;
     font-size: 18px;
  
@@ -19,8 +19,7 @@ body {
     padding: 10px;
     margin-top: 10px;
     margin-right: 50px;
-    
-=======
+
   margin-top: 20px;
   font-size: 18px;
 }
@@ -36,7 +35,7 @@ body {
   margin-top: 10px;
   margin-right: 50px;
   
->>>>>>> 4dfc46eedf343e8bb5e588564065faa99a8cf515
+
 }
 
 .nav ul {
@@ -63,7 +62,6 @@ color:rgb(5, 53, 15);
 color: blue;
 }
 
-<<<<<<< HEAD
 
   .nav ul li a {
     color: #000000;
@@ -76,24 +74,26 @@ color: blue;
     text-decoration-skip-ink: none; 
     color: #1D2B78; 
     margin-bottom: -2px; 
-=======
-.nav ul li a {
-  color: #000000;
-  text-decoration: none;
-  font-family: calibri;
 }
 
-.nav ul li.active a {
-  text-decoration: underline;
-  text-decoration-skip-ink: none; 
-  color: #1D2B78; 
-  margin-bottom: -2px; 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
 
-.nav img {
-  margin-left: 150px;
->>>>>>> 4dfc46eedf343e8bb5e588564065faa99a8cf515
+.nav-links li {
+  margin-right: 20px;
 }
 
 

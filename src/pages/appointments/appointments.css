@@ -73,3 +73,20 @@
 .no-appointments {
   font-size: 15p;
 }
+@media screen and (max-width: 768px) {
+  .appointments-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .appointments-table th,
+  .appointments-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

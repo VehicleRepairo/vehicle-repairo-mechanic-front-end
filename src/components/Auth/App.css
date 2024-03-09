@@ -101,3 +101,19 @@ h2{
   margin-top: 30px;
   margin-left: 60px;
 }
+.login{
+  margin-left:58px;
+}
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .form-container {
+    max-width: 100%;
+  }
+}

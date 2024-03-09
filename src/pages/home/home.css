@@ -40,3 +40,39 @@
   font-size: 50px; 
   color: #282C80;
 }
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-container {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.content-container {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .home-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .image-container {
+    margin-right: 20px;
+  }
+
+  .content-container {
+    max-width: 50%;
+    text-align: left;
+  }
+}
