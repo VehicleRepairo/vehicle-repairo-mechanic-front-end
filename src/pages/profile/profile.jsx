@@ -41,6 +41,7 @@ const Profile = () => {
                 const data = await response.json();
                 print (data);
                 setLocation(data);
+                print(location)
             } catch (error) {
                 console.error('Error fetching location:', error);
             }
@@ -98,8 +99,8 @@ const Profile = () => {
                                 <Td>{authUser.email}</Td>
                             </Tr>
                             <Tr>
-                                <Td>Ratings</Td>
-                                <Td><StarIcon/><StarIcon/><StarIcon/><StarIcon/></Td>
+                                <Td>Average_Rating</Td>
+                                <Td>{location.rating}</Td>
                             </Tr>
                         </Tbody>
                         <Tfoot>

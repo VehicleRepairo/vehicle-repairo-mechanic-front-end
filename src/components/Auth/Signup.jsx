@@ -112,7 +112,6 @@ export const Signup = (props) => {
                   <option value="">Select your category</option>
                   <option value="vehicle service">Vehicle Service</option>
                   <option value="vehicle inspection">Vehicle Inspection</option>
-                  <option value="tyre replacement">Tyre Replacement</option>
                   <option value="tyre repair">Tyre Repair</option>
                   <option value="vehicle wash">Vehicle Wash</option>
                 </select>

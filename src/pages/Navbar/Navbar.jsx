@@ -5,6 +5,7 @@ import { Link, Button, Avatar, Flex } from "@chakra-ui/react";
 import useLogout from "../../hooks/useLogout";
 
 export default function Navbar() {
+
   const { handleLogout, isLoggingOut } = useLogout();
   
   return (
@@ -55,6 +56,7 @@ export default function Navbar() {
             transition="background-color 0.3s ease-out, color 0.3s ease-out"
             isLoading={isLoggingOut}
             onClick={handleLogout}
+            
           >
             Logout
           </Button>

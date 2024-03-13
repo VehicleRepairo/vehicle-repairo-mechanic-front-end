@@ -47,7 +47,7 @@ export default function Appointments() {
       setAppointments(appointments.filter(appointment => appointment._id !== id));
       setSelectedAppointment(null); // Deselect the appointment
       // Display message to the user
-      alert("Appointment deleted");
+      alert("Appointment done");
     } catch (error) {
       console.error('Error deleting appointment:', error);
     }
