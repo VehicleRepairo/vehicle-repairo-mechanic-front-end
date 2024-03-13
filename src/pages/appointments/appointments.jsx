@@ -73,6 +73,7 @@ export default function Appointments() {
 
   return (
     <div className="appointments-container">
+    
       {appointments.length > 0 ? (
         <table className="appointments-table">
           <thead>
@@ -115,6 +116,17 @@ export default function Appointments() {
               <button onClick={() => handleReject(selectedAppointment)}>Reject</button>
             </div>
           </Flex>
+        </div>
+      )}
+
+      {selectedAppointment && (
+        <div className="button-container">
+          <div className="Done-container">
+            <button onClick={() => handleAccept(selectedAppointment)} className={buttonClicked === selectedAppointment ? 'clicked' : ''}>Done</button>
+          </div><br />
+          <div className="Reject-container">
+            <button onClick={() => handleReject(selectedAppointment)} className={buttonClicked === selectedAppointment ? 'clicked' : ''}>Reject</button>
+          </div>
         </div>
       )}
     </div>

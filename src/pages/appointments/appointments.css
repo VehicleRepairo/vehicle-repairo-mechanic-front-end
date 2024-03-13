@@ -6,6 +6,7 @@
 
 .appointments-table th,
 .appointments-table th {
+<<<<<<< HEAD
   background-color: #f2f2f2; /* Background color */
   color: #5a5a5a; /* Text color */
 }
@@ -14,6 +15,16 @@
   border-top: 1px solid #ccc; /* Keep only the top border */
   border-left: none; /* Remove left border */
   border-right: none; /* Remove right border */
+=======
+  background-color: #f2f2f2; 
+  color: #5a5a5a; 
+}
+.appointments-table td {
+  padding: 25px 26px; 
+  border-top: 1px solid #ccc; 
+  border-left: none; 
+  border-right: none; 
+>>>>>>> d8d0040ab279ed583f58e9341a260087c90a0509
 }
 
 .appointments-table th {
@@ -30,6 +41,7 @@
 }
 
 .Done-container button {
+<<<<<<< HEAD
   background-color: #1D2B78; /* Green */
   color: white;
   border: none;
@@ -89,4 +101,43 @@
     display: flex;
     flex-direction: column;
   }
+=======
+  background-color: #1D2B78;
+  color: white;
+  border: none;
+  padding: 10px 30px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px; 
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Done-container button:hover {
+  background-color: #263aa8; 
+}
+
+
+.Reject-container button {
+  background-color: #1D2B78;
+  color: white;
+  border: none;
+  padding: 10px 30px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px; 
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Reject-container button:hover {
+  background-color: #263aa8; 
+}
+
+.Done-container button.clicked,
+.Reject-container button.clicked {
+  background-color: #020d4a;
+>>>>>>> d8d0040ab279ed583f58e9341a260087c90a0509
 }
