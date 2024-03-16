@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="nav">
       <a href="/">
         <img
-          src="/Mech_Logo.png"
+          src="/Mech_Logo.jpg"
           alt="Logo"
           style={{ width: "120px", height: "100px" }}
         />
