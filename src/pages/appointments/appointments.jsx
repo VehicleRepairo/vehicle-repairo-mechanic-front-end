@@ -47,7 +47,7 @@ export default function Appointments() {
       setAppointments(appointments.filter(appointment => appointment._id !== id));
       setSelectedAppointment(null); // Deselect the appointment
       // Display message to the user
-      alert("Appointment deleted");
+      alert("Appointment done");
     } catch (error) {
       console.error('Error deleting appointment:', error);
     }
@@ -73,6 +73,7 @@ export default function Appointments() {
 
   return (
     <div className="appointments-container">
+    
       {appointments.length > 0 ? (
         <table className="appointments-table">
           <thead>
@@ -116,6 +117,17 @@ export default function Appointments() {
               <button onClick={() => handleReject(selectedAppointment)}>Reject</button>
             </div>
           </Flex>
+        </div>
+      )}
+
+      {selectedAppointment && (
+        <div className="button-container">
+          <div className="Done-container">
+            <button onClick={() => handleAccept(selectedAppointment)} className={buttonClicked === selectedAppointment ? 'clicked' : ''}>Done</button>
+          </div><br />
+          <div className="Reject-container">
+            <button onClick={() => handleReject(selectedAppointment)} className={buttonClicked === selectedAppointment ? 'clicked' : ''}>Reject</button>
+          </div>
         </div>
       )}
     </div>
