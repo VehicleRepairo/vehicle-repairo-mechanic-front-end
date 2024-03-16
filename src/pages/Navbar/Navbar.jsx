@@ -5,13 +5,14 @@ import { Link, Button, Avatar, Flex } from "@chakra-ui/react";
 import useLogout from "../../hooks/useLogout";
 
 export default function Navbar() {
+
   const { handleLogout, isLoggingOut } = useLogout();
   
   return (
     <nav className="nav">
       <a href="/">
         <img
-          src="/Mech_Logo.jpg"
+          src="/Mech_Logo.png"
           alt="Logo"
           style={{ width: "120px", height: "100px" }}
         />
@@ -50,11 +51,13 @@ export default function Navbar() {
         <li>
           <Button
             display={{ base: "none", md: "block" }}
-            variant={"solid"}
+            colorScheme='telegram' 
+            size='lg'
             _hover={{ bg: "#990000", color: "white" }}
             transition="background-color 0.3s ease-out, color 0.3s ease-out"
             isLoading={isLoggingOut}
             onClick={handleLogout}
+            
           >
             Logout
           </Button>

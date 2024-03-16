@@ -4,6 +4,7 @@ import {
   AlertIcon,
   Button,
   Input,
+  Select,
  
 } from "@chakra-ui/react";
 import useSignUpWithEmailAndPassword from "../../hooks/useSignUpwithEmailandPassword";;
@@ -52,7 +53,7 @@ export const Signup = (props) => {
                   placeholder="Email"
                   fontSize={14}
                   type="email"
-                  size={"sm"}
+                  size={"md"}
                   value={inputs.email}
                   onChange={(e) =>
                     setInputs({ ...inputs, email: e.target.value })
@@ -65,7 +66,7 @@ export const Signup = (props) => {
                   placeholder="Contact"
                   fontSize={14}
                   type="text"
-                  size={"sm"}
+                  size={"md"}
                   value={inputs.contact}
                   onChange={(e) =>
                     setInputs({ ...inputs, contact: e.target.value })
@@ -78,7 +79,7 @@ export const Signup = (props) => {
                   placeholder="Full Name"
                   fontSize={14}
                   type="text"
-                  size={"sm"}
+                  size={"md"}
                   value={inputs.fullName}
                   onChange={(e) =>
                     setInputs({ ...inputs, fullName: e.target.value })
@@ -92,7 +93,7 @@ export const Signup = (props) => {
                   placeholder="Password"
                   fontSize={14}
                   value={inputs.password}
-                  size={"sm"}
+                  size={"md"}
                   onChange={(e) =>
                     setInputs({ ...inputs, password: e.target.value })
                   }
@@ -101,7 +102,7 @@ export const Signup = (props) => {
                 <p>
                   <label htmlFor="Category" className="catergory">Category</label>
                 </p>
-                <select
+                <Select
                   value={inputs.catergory}
                   onChange={(e) =>
                     setInputs({ ...inputs, catergory: e.target.value })
@@ -112,10 +113,10 @@ export const Signup = (props) => {
                   <option value="">Select your category</option>
                   <option value="vehicle service">Vehicle Service</option>
                   <option value="vehicle inspection">Vehicle Inspection</option>
-                  <option value="tyre replacement">Tyre Replacement</option>
                   <option value="tyre repair">Tyre Repair</option>
-                  <option value="vehicle wash">Vehicle Wash</option>
-                </select>
+                  <option value="vehicle wash">Vehicle Wash</option> 
+
+                </Select>
               </div>
               {error && (
                 <Alert status="error" fontSize={13} p={2} borderRadius={4}>
@@ -143,7 +144,7 @@ export const Signup = (props) => {
           </div>
         </div>
         <div className="image-section" >
-          <img src="/webLogin.jpg" alt="webLogin" />
+          <img src="/login.jpg" alt="webLogin" />
         </div>
       </div>
       

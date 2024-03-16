@@ -66,12 +66,15 @@
   background-color: rgb(80, 18, 18); /* Darker red */
 }
 .appointment_img{
-  margin-left: 600px;
-  margin-top: 150px;
+  margin-left: 650px;
+  margin-top: 20px;
 }
 
 .no-appointments {
-  font-size: 15p;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 200px;
+  
 }
 @media screen and (max-width: 768px) {
   .appointments-table {

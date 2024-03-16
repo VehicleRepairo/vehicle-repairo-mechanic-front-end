@@ -36,7 +36,7 @@ export const Login = (props) => {
                 placeholder="Email"
                 fontSize={15}
                 type="email"
-                size={"sm"}
+                size={'lg'}
                 value={inputs.email}
                 onChange={(e) =>
                   setInputs({ ...inputs, email: e.target.value })
@@ -49,7 +49,7 @@ export const Login = (props) => {
                 marginTop={2}
                 placeholder="Password"
                 fontSize={15}
-                size={"sm"}
+                size={'lg'}
                 type="password"
                 value={inputs.password}
                 onChange={(e) =>
@@ -73,9 +73,9 @@ export const Login = (props) => {
       </div>
       <div className="image-section">
         <img
-          src="/webLogin.jpg"
+          src="/login.jpg"
           alt="webLogin"
-          style={{ width: "100%", maxWidth: "750px", height: "auto" }}
+          // style={{ width: "50%", maxWidth: "750px", height: "auto" }}
         />
       </div>
     </div>

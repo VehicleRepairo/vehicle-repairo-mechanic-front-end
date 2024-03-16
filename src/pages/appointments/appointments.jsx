@@ -100,7 +100,8 @@ export default function Appointments() {
         </table>
       ) : (
         <div className="no-appointments">
-          <img className="appointment_img" src="no_appointments.png" alt="No appointments" style={{ width: "150px", height: "150px" }} />
+          <p><h1>No appointments</h1></p>
+          <img className="appointment_img" src="no_appointments.png" alt="No appointments" style={{ width: "200px", height: "200px" }} />
         </div>
       )}
 

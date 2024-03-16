@@ -14,6 +14,10 @@
   color: white;
 }
 
+.heading-container {
+  margin-top: 100px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -50,7 +54,7 @@
   margin-top: 20px;
   margin-right: 10px;
 }
-
+/* 
 .switch-container button {
   background-color: #fff;
   color: #1D2B78; 
@@ -59,7 +63,7 @@
   border-radius: 15px;
   font-family: "Calibri", sans-serif;
   cursor: pointer;
-}
+} */
 
 .word-container {
   color: #707070; 
@@ -75,14 +79,6 @@
   margin-top: 10px;
 }
 
-.body-container input {
-  border-radius: 5px;
-  width: 50%;
-  height: 30px;
-  border: 2px solid #b7b7b7; 
-  font-size:12px;
-  color: #121212;
-}
 
 
 form button {
@@ -100,6 +96,7 @@ form button {
 h2{
   margin-top: 30px;
   margin-left: 60px;
+  font-size: 30px;
 }
 .login{
   margin-left:58px;
