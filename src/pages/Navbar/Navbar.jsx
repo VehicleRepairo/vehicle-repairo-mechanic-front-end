@@ -49,6 +49,16 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
+          <Link
+            to={"/AboutUs"}
+            as={RouterLink}
+            _hover={{ textDecoration: "underline", color: "#002699" }}
+            fontWeight="500"
+          >
+            About us
+          </Link>
+        </li>
+        <li>
           <Button
             display={{ base: "none", md: "block" }}
             variant={"solid"}

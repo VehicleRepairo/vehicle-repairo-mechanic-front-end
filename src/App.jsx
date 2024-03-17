@@ -4,6 +4,7 @@ import { auth } from "./firebase/firebase";
 import HomePage from "./pages/home/home.jsx"; 
 import Profile from "./pages/profile/profile.jsx";
 import Appointments from "./pages/appointments/appointments.jsx";
+import AboutUs from "./pages/aboutUs/aboutUs.jsx";
 import PageLayout from "./PageLayout/PageLayout";
 import Auth from "./pages/Auth/Auth.jsx";
 
@@ -18,6 +19,7 @@ function App() {
 					<Route path='/auth' element={!authUser ? <Auth /> : <Navigate to='/' />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/appointments/' element={<Appointments />} />
+					<Route path='/aboutUs/' element={<AboutUs />} />
 				</Routes>
 			</PageLayout>
 		</Router>
