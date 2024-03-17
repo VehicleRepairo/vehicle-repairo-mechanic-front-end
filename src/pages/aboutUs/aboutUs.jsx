@@ -1,27 +1,27 @@
 import React from 'react';
-import './aboutUs.css';
+import './aboutUs.css'; 
 
 const AboutUs = () => {
   return (
     <div className="container">
       <div className="card" data-message="Hover message for card 1">
-        <h2>Card 1</h2>
-        <p>This is the content of card 1.</p>
+        <h2>Guidance</h2>
+        <p>We provide guidance to basic vehicle problems</p>
       </div>
       <div className="card" data-message="Hover message for card 2">
-        <h2>Card 2</h2>
-        <p>This is the content of card 2.</p>
+        <h2>Finding nearest mechanic</h2>
+        <p>We make sure to provide u the nearest mechanic according to your category</p>
       </div>
       <div className="card" data-message="Hover message for card 3">
-        <h2>Card 3</h2>
-        <p>This is the content of card 3.</p>
+        <h2>Appointment booking</h2>
+        <p>A booking appointment system is available</p>
       </div>
       <div className="card" data-message="Hover message for card 4">
-        <h2>Card 4</h2>
-        <p>This is the content of card 4.</p>
+        <h2>Service reminder</h2>
+        <p>Provide vehicle service reminders to keep you updated with vehicle maintainance</p>
       </div>
-      <button>Click Me</button>
-      <p>This is a paragraph.</p>
+      <button>Join Us</button>
+      <p>The above services are provided by our Vehicle Repairo mobile application. Join us today with our company to make the company and your life!!!</p>
     </div>
   );
 }
