@@ -4,6 +4,7 @@ import './aboutUs.css';
 const AboutUs = () => {
   return (
     <div className="container">
+      <h1>What we offer</h1>
       <div className="card" data-message="Hover message for card 1">
         <h2>Guidance</h2>
         <p>We provide guidance to basic vehicle problems</p>
@@ -20,8 +21,8 @@ const AboutUs = () => {
         <h2>Service reminder</h2>
         <p>Provide vehicle service reminders to keep you updated with vehicle maintainance</p>
       </div>
-      <button>Join Us</button>
-      <p>The above services are provided by our Vehicle Repairo mobile application. Join us today with our company to make the company and your life!!!</p>
+      <button className="button">Join Us</button>
+      <p>The above services are provided by our Vehicle Repair mobile application. Join us today with our company to make the company and your life better!</p>
     </div>
   );
 }

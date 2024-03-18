@@ -1,39 +1,62 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
+
+h1::first-letter {
+  font-size: 90px;
 }
 
 .card {
+  border-radius: 5px;
+  color: white;
   position: relative;
-  width: calc(25% - 20px);
+  width: 200px; /* Set a fixed width for the cards */
+  height: 200px; /* Set a fixed height for the cards */
   border: 1px solid #ccc;
   padding: 20px;
-  margin: 10px;
+  margin: 0 90px;
   cursor: pointer;
+  overflow: hidden; /* Ensure that any overflowing content is hidden */
+  background-size: cover; /* Adjust background-size property */
+  background-position: center; /* Center the background image */
+  display: inline-block; /* Display cards in the same line */
 }
 
-.card:hover::before {
-  content: attr(data-message);
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
+/* Styling odd cards with dark blue background */
+.card:nth-child(odd) {
+  background-color: #003366; /* Dark blue background */
 }
 
-button {
-  margin: 20px 0;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+/* Styling even cards with light blue background */
+.card:nth-child(even) {
+  background-color: #ADD8E6; /* Light blue background */
 }
 
-p {
-  margin: 20px 0;
+
+.card h2 {
+  text-align: center;
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+.card p {
+  display: none; /* Initially hide the paragraph */
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+.card:hover h2 {
+  display: none; /* Hide h2 when card is hovered */
+}
+
+.card:hover p {
+  display: block; /* Display the paragraph when card is hovered */
+}
+
+.button {
+  color: aqua;
 }
