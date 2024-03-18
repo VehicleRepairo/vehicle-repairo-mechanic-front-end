@@ -1,14 +1,13 @@
 h1 {
   text-align: center;
   font-size: 50px;
-  font-weight: bold;
-  color: black;
-  margin-bottom: 20px;
+  color: #282C80;
+  margin-bottom: 100px;
 }
 
-h1::first-letter {
+/* h1::first-letter {
   font-size: 90px;
-}
+} */
 
 .card {
   border-radius: 5px;
@@ -18,7 +17,7 @@ h1::first-letter {
   height: 200px; /* Set a fixed height for the cards */
   border: 1px solid #ccc;
   padding: 20px;
-  margin: 0 90px;
+  margin: 0 5.5%;
   cursor: pointer;
   overflow: hidden; /* Ensure that any overflowing content is hidden */
   background-size: cover; /* Adjust background-size property */
@@ -45,11 +44,23 @@ h1::first-letter {
 
 .card p {
   display: none; /* Initially hide the paragraph */
-  font-weight: bold;
   margin: 0; /* Remove default margin */
 }
 
+.card img {
+  position: absolute;
+  bottom: 10px; /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: auto;
+}
+
 .card:hover h2 {
+  display: none; /* Hide h2 when card is hovered */
+}
+
+.card:hover img {
   display: none; /* Hide h2 when card is hovered */
 }
 
@@ -57,6 +68,39 @@ h1::first-letter {
   display: block; /* Display the paragraph when card is hovered */
 }
 
+.bottom-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.descrip {
+  width: 50%;
+  /* display: flex;
+  flex-direction: left; */
+  font-size: 19px;
+  margin: 50px 7%;
+  padding: 5px 20px;
+  white-space: nowrap;
+}
+
 .button {
-  color: aqua;
+  /* display: flex;
+  flex-direction: right; */
+  margin: 50px 25%;
+  padding: 10px 30px;
+  color: white;
+  background-color: #008DDA;
+  border-radius: 50px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.botton:hover {
+  margin: 50px 25%;
+  padding: 10px 30px;
+  color: white;
+  background-color: #00a6ff;
+  border-radius: 50px;
+  font-weight: bold;
+  white-space: nowrap;
 }
