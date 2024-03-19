@@ -2,7 +2,7 @@ h1 {
     text-align: center;
     font-size: 50px;
     color: #282C80;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
   }
   
   
@@ -15,12 +15,16 @@ h1 {
     height: 200px;
     border: 1px solid #ccc;
     padding: 20px;
-    margin: 0 5.5%;
+    margin: 0 4%;
     cursor: pointer;
     overflow: hidden; 
     background-size: cover;
     background-position: center; 
     display: inline-block;
+  }
+
+  .cards {
+    margin-left: 10%;
   }
   
   
@@ -34,9 +38,8 @@ h1 {
   }
   
   
-  .card h2 {
+  .card h4 {
     text-align: center;
-    font-weight: bold;
     margin: 0; 
   }
   
@@ -54,7 +57,7 @@ h1 {
     height: auto;
   }
   
-  .card:hover h2 {
+  .card:hover h4 {
     display: none; 
   }
   
@@ -68,35 +71,16 @@ h1 {
   
   .bottom-container {
     display: flex;
-    margin-top: 50px;
+    margin-top: 70px;
   }
   
   .descrip {
-    width: 50%;
-  
-    font-size: 19px;
-    margin: 50px 7%;
+    width: 50%;  
+    text-align: center;
+    font-size: 18px;
+    margin: 20px auto 10px;
     padding: 5px 20px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
   
-  .button {
-    margin: 50px 25%;
-    padding: 10px 30px;
-    color: white;
-    background-color: #008DDA;
-    border-radius: 50px;
-    font-weight: bold;
-    white-space: nowrap;
-  }
-  
-  .botton:hover {
-    margin: 50px 25%;
-    padding: 10px 30px;
-    color: white;
-    background-color: #00a6ff;
-    border-radius: 50px;
-    font-weight: bold;
-    white-space: nowrap;
-  }
   
