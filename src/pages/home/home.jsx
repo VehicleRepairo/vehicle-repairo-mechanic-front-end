@@ -19,7 +19,7 @@ const HomePage = () => {
         <br />
         <p>
           <i>
-            <h2>Let's redefine car care together!</h2>
+            <h3>Let's redefine car care together!</h3>
           </i>
         </p><br></br>
         <Button colorScheme='blue' size="lg">About Us</Button>

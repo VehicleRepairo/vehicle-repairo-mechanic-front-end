@@ -49,6 +49,16 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
+          <Link
+            to={"/aboutUs"}
+            as={RouterLink}
+            _hover={{ textDecoration: "underline", color: "#002699" }}
+            fontWeight="500"
+          >
+            About Us
+          </Link>
+        </li>
+        <li>
           <Button
             display={{ base: "none", md: "block" }}
             colorScheme='telegram' 

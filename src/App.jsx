@@ -6,6 +6,7 @@ import Profile from "./pages/profile/profile.jsx";
 import Appointments from "./pages/appointments/appointments.jsx";
 import PageLayout from "./PageLayout/PageLayout";
 import Auth from "./pages/Auth/Auth.jsx";
+import AboutUs from "./pages/aboutUs/aboutUs.jsx";
 
 function App() {
 	const [authUser] = useAuthState(auth);
@@ -18,6 +19,7 @@ function App() {
 					<Route path='/auth' element={!authUser ? <Auth /> : <Navigate to='/' />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/appointments/' element={<Appointments />} />
+					<Route path='/aboutUs/' element={<AboutUs	/>} />
 				</Routes>
 			</PageLayout>
 		</Router>

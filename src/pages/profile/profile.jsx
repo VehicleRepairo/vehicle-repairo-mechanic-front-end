@@ -39,9 +39,9 @@ const Profile = () => {
                 }
 
                 const data = await response.json();
-                print (data);
+               
                 setLocation(data);
-                print(location)
+               
             } catch (error) {
                 console.error('Error fetching location:', error);
             }
