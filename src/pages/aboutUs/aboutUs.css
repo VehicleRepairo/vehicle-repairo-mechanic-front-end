@@ -83,4 +83,36 @@ h1 {
     /* white-space: nowrap; */
   }
   
+
+  /* Media query for tablets */
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .cards {
+    margin-left: 10%;
+  }
+
+  .card {
+    width: calc(50% - 20px); /* Adjust margin accordingly */
+    margin: 0 2.5%;
+  }
+}
+
+/* Media query for desktops */
+@media only screen and (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .cards {
+    margin-left: 15%;
+  }
+
+  .card {
+    width: calc(33.33% - 20px); /* Adjust margin accordingly */
+    margin: 0 2.5%;
+  }
+}
   
