@@ -8,23 +8,24 @@ h1 {
   
   
   .card {
+    flex-wrap: wrap;
     border-radius: 5px;
     color: white;
     position: relative;
-    width: 200px;
-    height: 200px;
+    height: 100px;
     border: 1px solid #ccc;
     padding: 20px;
-    margin: 0 4%;
+    margin: 0 5%;
     cursor: pointer;
     overflow: hidden; 
     background-size: cover;
     background-position: center; 
-    display: inline-block;
+    display: inline-block; 
+    justify-content: space-between;
   }
 
   .cards {
-    margin-left: 10%;
+    flex-wrap: wrap;
   }
   
   
@@ -35,6 +36,7 @@ h1 {
   
   .card:nth-child(even) {
     background-color: #ADD8E6;
+    color: black;
   }
   
   
@@ -80,7 +82,7 @@ h1 {
     font-size: 18px;
     margin: 20px auto 10px;
     padding: 5px 20px;
-    /* white-space: nowrap; */
+   
   }
   
 
@@ -92,6 +94,7 @@ h1 {
 
   .cards {
     margin-left: 10%;
+    
   }
 
   .card {
@@ -107,7 +110,9 @@ h1 {
   }
 
   .cards {
-    margin-left: 15%;
+    margin-left: 20%;
+    flex-wrap: wrap;
+
   }
 
   .card {

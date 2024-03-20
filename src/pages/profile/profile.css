@@ -5,12 +5,9 @@
 }
 
 
-<<<<<<< HEAD
 img{
     margin-left: 420px;
 }
-=======
->>>>>>> 4dfc46eedf343e8bb5e588564065faa99a8cf515
 .profile-field {
     display: flex; 
     align-items: center; 
@@ -44,11 +41,7 @@ img{
 .profile-field img {
     width: 20px;
     height: 20px;
-<<<<<<< HEAD
     margin-left: 300px;
-=======
-    margin-left: auto;
->>>>>>> 4dfc46eedf343e8bb5e588564065faa99a8cf515
     margin-right: 400px;
     cursor: pointer;
 }

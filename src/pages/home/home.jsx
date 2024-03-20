@@ -3,6 +3,10 @@ import "./home.css";
 import { Button } from '@chakra-ui/react';
 
 const HomePage = () => {
+  const handleButtonClick = () => {
+    window.location.href = '/aboutUs'; // Redirect to the signup page when the button is clicked
+  };
+
   return (
     <div className="home-container">
       <div className="background-image"></div>
@@ -18,12 +22,9 @@ const HomePage = () => {
         </p>
         <br />
         <p>
-          <i>
-            <h3>Let's redefine car care together!</h3>
-          </i>
-        </p><br></br>
-        <Button colorScheme='blue' size="lg">About Us</Button>
-
+          {/* Use Chakra UI Button component for the button */}
+          <Button colorScheme="blue" onClick={handleButtonClick}>About Us</Button>
+        </p>
       </div>
     </div>
   );
