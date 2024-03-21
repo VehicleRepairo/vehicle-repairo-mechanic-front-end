@@ -11,7 +11,7 @@ const Auth = () => {
   return (
     <>
       
-      <div className="switch-container">
+      <div className="switch-container" >
         <p >
           {isLogin ? "Don't have an account?" : "Already have an account?"}
           <Button colorScheme='teal' variant='outline' marginLeft={5} onClick={() => setIsLogin(!isLogin)}>
