@@ -5,11 +5,9 @@ import {
   Button,
   Input,
   Select,
- 
 } from "@chakra-ui/react";
-import useSignUpWithEmailAndPassword from "../../hooks/useSignUpwithEmailandPassword";;
+import useSignUpWithEmailAndPassword from "../../hooks/useSignUpwithEmailandPassword";
 import './App.css';
-
 
 export const Signup = (props) => {
   const [inputs, setInputs] = useState({
@@ -17,24 +15,35 @@ export const Signup = (props) => {
     contact: "",
     email: "",
     password: "",
-    catergory: "",
+    category: "",
   });
   const { loading, error, signup } = useSignUpWithEmailAndPassword();
+  const [contactError, setContactError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signup(inputs);
-    console.log(inputs);
-    props.onSignup(formData);
-   
+    if (!contactError) {
+      await signup(inputs);
+      console.log(inputs);
+      props.onSignup(inputs);
+    }
   };
-  
+
+  const handleContactChange = (e) => {
+    const contactValue = e.target.value;
+    // Allow only numbers in the contact field
+    if (/^\d*$/.test(contactValue)) {
+      setInputs({ ...inputs, contact: contactValue });
+      setContactError(false);
+    } else {
+      setContactError(true);
+    }
+  };
 
   return (
     <>
       <div className="login-container">
         <div className="form-container">
-          
           <div className="heading-container">
             <p>
               <b>
@@ -47,7 +56,7 @@ export const Signup = (props) => {
             <form onSubmit={handleSubmit}>
               <div className="body-container">
                 <p>
-                  <label htmlFor="Email">  Email</label>
+                  <label htmlFor="Email">Email</label>
                 </p>
                 <Input
                   placeholder="Email"
@@ -68,10 +77,11 @@ export const Signup = (props) => {
                   type="text"
                   size={"md"}
                   value={inputs.contact}
-                  onChange={(e) =>
-                    setInputs({ ...inputs, contact: e.target.value })
-                  }
+                  onChange={handleContactChange} 
                 />
+                {contactError && (
+                  <p style={{ color: "red", fontSize: 12 }}>Please enter correct contact number</p>
+                )}
                 <p>
                   <label htmlFor="Name">Name</label>
                 </p>
@@ -88,7 +98,6 @@ export const Signup = (props) => {
                 <p>
                   <label htmlFor="Password">Password</label>
                 </p>
-
                 <Input
                   placeholder="Password"
                   fontSize={14}
@@ -98,14 +107,13 @@ export const Signup = (props) => {
                     setInputs({ ...inputs, password: e.target.value })
                   }
                 />
-
                 <p>
-                  <label htmlFor="Category" className="catergory">Category</label>
+                  <label htmlFor="Category" className="category">Category</label>
                 </p>
                 <Select
-                  value={inputs.catergory}
+                  value={inputs.category}
                   onChange={(e) =>
-                    setInputs({ ...inputs, catergory: e.target.value })
+                    setInputs({ ...inputs, category: e.target.value })
                   }
                   id="Category"
                   name="Category"
@@ -114,8 +122,7 @@ export const Signup = (props) => {
                   <option value="vehicle service">Vehicle Service</option>
                   <option value="vehicle inspection">Vehicle Inspection</option>
                   <option value="tyre repair">Tyre Repair</option>
-                  <option value="vehicle wash">Vehicle Wash</option> 
-
+                  <option value="vehicle wash">Vehicle Wash</option>
                 </Select>
               </div>
               {error && (
@@ -124,30 +131,25 @@ export const Signup = (props) => {
                   {error.message}
                 </Alert>
               )}
-              <p>
-                
-                <Button
-                  textColor={"white"}
-                  colorScheme="#1D2B78"
-                  marginTop={10}
-                  isLoading={loading}
-                  onClick={handleSubmit}
-                  type="submit"
-                >
-                  Signup
-                 
-                </Button>
-                
-              </p>
-            
+              <Button
+                textColor={"white"}
+                colorScheme="#1D2B78"
+                marginTop={10}
+                isLoading={loading}
+                onClick={handleSubmit}
+                type="submit"
+              >
+                Signup
+              </Button>
             </form>
           </div>
         </div>
-        <div className="image-section" >
+        <div className="image-section">
           <img src="/login.jpg" alt="webLogin" />
         </div>
       </div>
-      
     </>
   );
 };
+
+export default Signup;
