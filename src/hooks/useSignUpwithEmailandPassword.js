@@ -65,6 +65,7 @@ const useSignUpWithEmailAndPassword = () => {
         
       }
     } catch (error) {
+      console.log(error)
       showToast("Error", error.message, "error");
     }
   };
