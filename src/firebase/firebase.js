@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCAJJz3i1CPU6GHSdCpeBWUJy5xa9-AxU4",
-  authDomain: "vehicle-repairo.firebaseapp.com",
-  projectId: "vehicle-repairo",
-  storageBucket: "vehicle-repairo.appspot.com",
-  messagingSenderId: "953480365288",
-  appId: "1:953480365288:web:213f5028e280338324755d",
-  measurementId: "G-LBVLD01JSD"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
