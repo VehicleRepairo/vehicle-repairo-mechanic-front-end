@@ -15,7 +15,7 @@ export const Signup = (props) => {
     contact: "",
     email: "",
     password: "",
-    category: "",
+    catergory: "",
   });
   const { loading, error, signup } = useSignUpWithEmailAndPassword();
   const [contactError, setContactError] = useState(false);
@@ -111,9 +111,9 @@ export const Signup = (props) => {
                   <label htmlFor="Category" className="category">Category</label>
                 </p>
                 <Select
-                  value={inputs.category}
+                  value={inputs.catergory}
                   onChange={(e) =>
-                    setInputs({ ...inputs, category: e.target.value })
+                    setInputs({ ...inputs, catergory: e.target.value })
                   }
                   id="Category"
                   name="Category"
