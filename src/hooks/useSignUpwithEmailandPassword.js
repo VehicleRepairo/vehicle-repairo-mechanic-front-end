@@ -55,7 +55,7 @@ const useSignUpWithEmailAndPassword = () => {
           email: inputs.email,
           contact: inputs.contact,
           fullName: inputs.fullName,
-          catergory: inputs.catergory,
+          catergory: inputs.category,
           profilePicURL: "",
           createdAt: Date.now(),
         };
