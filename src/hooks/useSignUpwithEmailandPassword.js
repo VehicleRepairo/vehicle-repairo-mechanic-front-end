@@ -24,7 +24,7 @@ const useSignUpWithEmailAndPassword = () => {
       !inputs.password ||
       !inputs.contact ||
       !inputs.fullName ||
-      !inputs.catergory
+      !inputs.category
     ) {
       showToast("Error", "Please fill all the fields", "error");
       return;
