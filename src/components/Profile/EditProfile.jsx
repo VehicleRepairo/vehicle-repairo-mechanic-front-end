@@ -41,7 +41,7 @@ const EditProfile = ({ isOpen, onClose }) => {
             console.log(inputs)
             console.log(selectedFile)
 			await editProfile(inputs, selectedFile);
-			await fetch("http://localhost:8000/profile", {
+			await fetch("https://vehicle-repairo-back-end-95880a9904c7.herokuapp.com/profile", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
