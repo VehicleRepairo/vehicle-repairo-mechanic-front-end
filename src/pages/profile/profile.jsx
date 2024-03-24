@@ -26,7 +26,7 @@ const Profile = () => {
         // Function to fetch location data when the component mounts
         const fetchLocation = async () => {
             try {
-                const response = await fetch('http://localhost:8000/location', {
+                const response = await fetch('https://vehicle-repairo-back-end-95880a9904c7.herokuapp.com/location', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

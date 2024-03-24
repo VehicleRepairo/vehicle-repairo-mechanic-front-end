@@ -37,7 +37,7 @@ export default function Appointments() {
 
   const handleAccept = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8000/done/${id}`, {
+      const response = await fetch(`https://vehicle-repairo-back-end-95880a9904c7.herokuapp.com/done/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
