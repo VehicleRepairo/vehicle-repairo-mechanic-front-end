@@ -21,23 +21,26 @@ const Profile = () => {
     const authUser = useAuthStore((state) => state.user);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [location, setLocation] = useState({ city: '', address: '' }); // State to store location data
+    console.log(authUser.uid);
 
     useEffect(() => {
         // Function to fetch location data when the component mounts
         const fetchLocation = async () => {
             try {
+                if (!authUser) return; // If authUser is null or undefined, return early
                 const response = await fetch('https://vehicle-repairo-back-end-95880a9904c7.herokuapp.com/location', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({ uid: authUser.uid }),
+                    
                 });
-
+    
                 if (!response.ok) {
                     throw new Error('Failed to fetch location');
                 }
-
+    
                 const data = await response.json();
                
                 setLocation(data);
@@ -46,9 +49,10 @@ const Profile = () => {
                 console.error('Error fetching location:', error);
             }
         };
-
+    
         fetchLocation(); // Call the fetchLocation function
-    }, [authUser.uid]); // Make sure to include authUser.uid in the dependency array to re-fetch location when it changes
+    
+    }, [authUser]);
 
     return (
         <Box w={900} borderWidth='4px' borderRadius='lg' overflow='hidden' marginLeft={60}>

@@ -9,11 +9,12 @@ export default function Appointments() {
   const [appointments, setAppointments] = useState([]);
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const authUser = useAuthStore((state) => state.user);
+  console.log(authUser);
 
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/appointments/${authUser.uid}`);
+        const response = await fetch(`https://vehicle-repairo-back-end-95880a9904c7.herokuapp.com/appointments/${authUser.uid}`);
         if (!response.ok) {
           throw new Error('Failed to fetch appointments');
         }
@@ -55,7 +56,7 @@ export default function Appointments() {
 
   const handleReject = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8000/appointments/${id}`, {
+      const response = await fetch(`https://vehicle-repairo-back-end-95880a9904c7.herokuapp.com/appointments/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
